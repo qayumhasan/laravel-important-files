@@ -70,35 +70,4 @@ class AddToCartController extends Controller
     }
 
 
-    public function addToCartShow(Request $request)
-    {
-        
-        $countcartitems =Cart::session($request->user_id)->getContent();
-        return view('frontend.include.ajaxview',compact('countcartitems'));
-    }
-
-    public function addToCartDelete (Request $request)
-    {
-        
-        $userid = $request->ip();
-
-        $datadelete =Cart::session($userid)->remove($request->user_id);
-        $getcartdatas =Cart::session($userid)->getContent();
-
-        if($datadelete){
-            $items =0;
-            $price =0;
-
-            foreach(Cart::session($userid)->getContent() as $item){
-                 $items -= $item->quantity;
-                 $price -= $item->price * $items;
-            }
-        }
-        
-        return response()->json([
-            'quantity' => $items,
-            'price' => $price
-        ]);
-
-    }
 }
