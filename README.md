@@ -38,3 +38,6 @@
    ## Laravel url define condition
    1. We can not make url as name of public folder name. As like if we create a folder name "admin" in public folder. we can not make a url like "http://localhost.com/admin". It create a problems. 
    
+   ## Laravel Some method
+   1.If we went to go back in privious page we use {{ URL::previous() }}.
+   
