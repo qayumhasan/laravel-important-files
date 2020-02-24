@@ -37,14 +37,15 @@
    
    ## Laravel url define condition
    1. We can not make url as name of public folder name. As like if we create a folder name "admin" in public folder. we can not make a url like "http://localhost.com/admin". It create a problems. 
+   
    ## Set Same token field after page refresh
-    *First at all make a method that show the from like as:
+    *First at all make a method that show the from like as:<br>
       public function showFroggotPasswordFrom($token){
         return view('froggotpassword');
       }
-    *For this funtion we create route like this:
+    *For this funtion we create route like this:<br>
       Route::get('forgot/password/{token}','AuthController@forgotPassword')->name('forgot.password');
-    *Now create another method like this:
+    *Now create another method like this:<br>
       public function createToken(){
         $token = $user->token;
         retun redirect()->route('forgot.passowr',$token);
