@@ -51,6 +51,129 @@
         retun redirect()->route('forgot.passowr',$token);
       }
      *now if we refresh page again and again this token can not remove.
+     
+   ## Laravel Multi Auth
+    1.Go to config ->auth.php file.
+    2. Make A guards in auth.php file like this:
+    
+        'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin_users',
+        ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'admin_users',
+            'hash' => false,
+        ],
+    ],
+    
+    *In here provider is provider section name . In here provider name is 'admin_users'.
+    
+    3.In auth.php file at provider section we write like this:
+    
+       'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+        ],
+        'admin_users' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+    ],
+    
+    4.In auth.php file at password section we write:
+      'passwords' => [
+        'users' => [
+            'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'admin_users' => [
+            'provider' => 'admin_users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+    ],
+    
+    5. After that we go to app->Exceptions->handler.php :
+    6.In hander.php file we write below code in render method:
+    
+     public function render($request, Exception $exception)
+    {
+        // return parent::render($request, $exception);
+
+        $class = get_class($exception);
+        switch ($class) {
+            case 'Illuminate\Auth\AuthenticationException':
+            $guard = arr::get($exception->guards(), 0);
+                switch ($guard) {
+                    case 'admin':
+                        $login = 'admin.login';
+                    break;
+                    case 'web':
+                        $login = 'login';
+                    break;
+                    default;
+                        $login ='login';
+                        break;
+                }
+                return redirect()->route($login);
+                break; 
+        }
+        //return parent::render($request, $exception);
+        return parent::render($request, $exception);
+    }
+    
+    7.GO to Middleware->rdirectifautenticated.php file...
+      
+       */
+    public function handle($request, Closure $next, $guard = null)
+    {
+        // if (Auth::guard($guard)->check()) {
+        //     return redirect(RouteServiceProvider::HOME);
+        // }
+
+        // return $next($request);
+
+        switch ($guard) {
+            case 'admin':
+                if (Auth::guard()->check()) {
+                    return redirect()->route('admin.home');
+                }
+            break;
+            case 'web':
+                if (Auth::guard()->check()) {
+                    return redirect()->route('home');
+                }
+            break;
+           
+        }
+        // if (Auth::guard($guard)->check()) {
+        //     return redirect('/home');
+        // }
+        return $next($request);
+    }
+    
+    8.How to use this:
+      $this->middleware('auth:admin');
+      
+    9.This file is upload on repository.
+      
    ## Laravel Some method
    1.If we went to go back in privious page we use {{ URL::previous() }}.
    
