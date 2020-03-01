@@ -172,6 +172,36 @@
     8.How to use this:
       $this->middleware('auth:admin');
       
+    9. In Login file controller
+    
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+    
+      public function login(Request $request)
+    {
+        $data = request()->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+       
+        $admin = Admin::where('email', request('email'))->first();
+        
+            if ($admin) {
+                if (Auth::guard('admin')->attempt(['email' => request('email'), 'password' => request('password')], 
+                request('remember'))) {
+                    return redirect()->intended(route('admin.home'));
+                } else {
+                    session()->flash('successMsg', 'Sorry !! Email or Password not matched!');
+                    return redirect()->back();
+                }
+            }else{
+                session()->flash('successMsg', 'Sorry !! Email or Password not matched!');
+                return redirect()->back();
+            }
+    }
+      
     9.This file is upload on repository.
       
    ## Laravel Some method
