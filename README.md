@@ -203,6 +203,29 @@
     }
       
     9.This file is upload on repository.
+    
+   ## Laravel custom route
+    1. Make a file in route folder like as admin.php
+    2.Go To RouteServiceProvider 
+    3.Create a method like this........
+    
+      protected function mapApi2Routes()
+    {
+        Route::prefix('api')
+             ->middleware(['api', 'auth:api'])
+             ->namespace('App\Api\V2\Controllers')
+             ->group(base_path('routes/api2.php'));
+    }
+    4.Diclar it in map method........
+    public function map()
+    {
+        $this->mapApiRoutes();
+
+        $this->mapWebRoutes();
+        $this->mapApi2Routes();
+
+        
+    }
       
    ## Laravel Some method
    1.If we went to go back in privious page we use {{ URL::previous() }}.
