@@ -1,4 +1,17 @@
- <script>
+//multiple delete
+<form action="{{route('inventory.item.multidelete')}}" id="multiple_delete" method="post">
+<td>
+     <label class="chech_container mb-4">
+         <input type="checkbox" name="deleteId[]" class="checkbox" value="{{$item->id}}">
+         <span class="checkmark"></span>
+     </label>
+ </td>
+</form>
+//single delete
+<a id="delete" href="{{route('inventory.item.delete',$item->id)}}" class="btn btn-danger btn-sm text-white" title="Delete"><i class="far fa-trash-alt"></i></a>
+
+
+<script>
         $(document).on("click", "#delete", function (e) {
             e.preventDefault();
             var link = $(this).attr("href");
