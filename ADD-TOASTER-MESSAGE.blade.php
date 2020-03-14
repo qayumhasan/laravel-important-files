@@ -22,9 +22,12 @@
 
 //in controller//
 
+function isdelete(){
  $notification=array(
                 'messege'=>'Nothing To Delete',
                 'alert-type'=>'info'
                  );
              return redirect()->back()->with($notification);
          }
+}
+
