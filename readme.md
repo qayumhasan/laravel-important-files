@@ -1,5 +1,5 @@
 # Larvel Notes
-# Detect IS USER ONLINE.
+## Detect IS USER ONLINE.
 1.Frist of all, Make A middleware name IsOnline.php
 2.Write below code in ISOnline middleware
 
