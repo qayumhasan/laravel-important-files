@@ -64,3 +64,40 @@
                         </tr>
                     
                     @endforeach
+                    
+## Insert json object data in database 
+
+   **1. In our model write this code ....**
+   
+      class Unique extends Model
+{
+    protected $guarded =['id'];
+
+    protected $casts = [
+        'info' => 'object'
+    ];
+      
+}
+
+**2.In Controller write below code...**
+
+ public function contactInformationupdate(Request $request)
+    {
+
+
+
+        Unique::where('key','contact')->first()->update([
+            'key'=>'contact',
+            'info'=>$request->except('_token'),
+        ]);
+
+        $notification = array(
+            'messege' => 'Contract Information Update successfully!',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
+    
+    ** 3.Data show in blade in this way.... **
+    
+    {{$contact->info->address}}
