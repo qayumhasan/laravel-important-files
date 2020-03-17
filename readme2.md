@@ -97,6 +97,7 @@
         );
         return Redirect()->back()->with($notification);
     }
+    
 ***3.Data show in blade in this way.... **
     
     {{$contact->info->address}}
