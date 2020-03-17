@@ -97,12 +97,11 @@
         );
         return Redirect()->back()->with($notification);
     }
-    
-    ** 3.Data show in blade in this way.... **
+***3.Data show in blade in this way.... **
     
     {{$contact->info->address}}
     
-    ## Show modal edit image dinamicaly.
+## Show modal edit image dinamicaly.
     var photo = data.image;
                         
     $('#edit_vst_photo').attr("src","{{asset('public/admins/images/team/')}}/"+photo);
