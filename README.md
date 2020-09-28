@@ -230,3 +230,15 @@
    ## Laravel Some method
    1.If we went to go back in privious page we use {{ URL::previous() }}.
    
+   ## Some json data show in laravel blade
+    $products = json_decode($products,true);
+        foreach($products as $row){
+            
+            $someArray = json_decode($row, true);
+            
+            echo $someArray[0]["name"] .'<br>';
+            echo $someArray[0]["quantity"] .'<br>';
+            
+            
+        }
+   
