@@ -242,3 +242,4 @@
             
         }
    
+## In Laravel-7's Auth::routes(); uses a function auth() defined in vendor/laravel/ui/src/AuthRouteMethods.php
