@@ -4,7 +4,6 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/madhur-taneja/README-Template)
 ![GitHub stars](https://img.shields.io/github/stars/madhur-taneja/README-Template?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/madhur-taneja/README-Template?style=social)
-![Facebook Follow](https://img.shields.io/facebook/follow/madhurtaneja2?style=social)
 
 A template for README files that can be used for your future projects. A small description about the project, shields as well as the link to your repo.
 
