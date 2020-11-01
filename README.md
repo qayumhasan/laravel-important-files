@@ -1,3 +1,34 @@
+# Project Title
+
+![Current Version](https://img.shields.io/badge/version-v0.1-blue)
+![GitHub contributors](https://img.shields.io/github/contributors/madhur-taneja/README-Template)
+![GitHub stars](https://img.shields.io/github/stars/madhur-taneja/README-Template?style=social)
+![GitHub forks](https://img.shields.io/github/forks/madhur-taneja/README-Template?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/madhurtaneja2?style=social)
+
+A template for README files that can be used for your future projects. A small description about the project, shields as well as the link to your repo.
+
+Open and view the Project using the `.zip` file provided or at my [GitHub Repository]
+
+The project is also hosted on [GitHub Pages]
+
+## Table of Contents
+- [Getting Started](#getting-started)
+	- [Tools Required](#tools-required)
+	- [Installation](#installation)
+- [Development](#development)
+    - [Part 1: Heading](#part-1-heading)
+	  - [Step 1: Subheading](#step-1-subheading)
+	  - [Step 2: Subheading](#step-2-subheading)
+	- [Part 2: Heading](#part-2-heading)
+- [Running the App](#running-the-app)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [Versioning](#versioning)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 # Laravel-important-files documentation
 ## Laravel Task Scheduling
 
