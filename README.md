@@ -28,7 +28,6 @@ The project is also hosted on [GitHub Pages]
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
-# Laravel-important-files documentation
 ## Laravel Task Scheduling
 
   1. First of all,write a command -- php artisan make:command InactiveUsers  
