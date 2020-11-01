@@ -243,3 +243,7 @@
         }
    
 ## In Laravel-7's Auth::routes(); uses a function auth() defined in vendor/laravel/ui/src/AuthRouteMethods.php
+
+## if web went to show input form fill up if user exist or show placeholder value then:
+  <input type="text" name="name" value="{{$user->name??''}}"
+                                                                        class="form-control" placeholder="Full Name">
