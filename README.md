@@ -250,8 +250,7 @@
   <input type="text" name="name" value="{{$user->name??''}}"class="form-control" placeholder="Full Name">
   
 ## If we need to get value like as from loop where there have same name we use like this
-
-
+  #dsa
   <div class="mr-20">
       <input type="radio" name="attendance[{{$row->id}}]" id="attendanceL3" value="L" class="common-radio">
       <label for="attendanceL3">Late</label>
