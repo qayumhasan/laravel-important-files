@@ -255,3 +255,4 @@
       <input type="radio" name="attendance[{{$row->id}}]" id="attendanceL3" value="L" class="common-radio">
       <label for="attendanceL3">Late</label>
   </div>
+## For tag input we can use Bootstrap-4-Tag-Input-Plugin-jQuery
