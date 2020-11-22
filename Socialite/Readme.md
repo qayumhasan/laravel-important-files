@@ -10,11 +10,11 @@
 ##  Install Socialite
  ``` composer require laravel/socialite ```
 ## Create Facebook App
-** Go to https://developers.facebook.com
-** click on create app button
-** click on build connected experiences
-** Write Your App Name and click on Created App ID , Do on security check
-** Click on "Facebook Login " -> WEB -> Enter Your site URL ->SAVE
-** Than go to setting->save Redirect Url
-** Setting ->Basic , and than collect your app id and secret id
+** Go to https://developers.facebook.com <br>
+** click on create app button <br>
+** click on build connected experiences <br>
+** Write Your App Name and click on Created App ID , Do on security check <br>
+** Click on "Facebook Login " -> WEB -> Enter Your site URL ->SAVE <br>
+** Than go to setting->save Redirect Url <br>
+** Setting ->Basic , and than collect your app id and secret id <br>
 
