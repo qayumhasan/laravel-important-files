@@ -1,3 +1,22 @@
+          <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Screenshot:</label>
+                      <div class="col-sm-6">
+                        <div id="thumbnail_img" class="row">
+                        
+  					           </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Image Gallary:</label>
+                     <div class="col-sm-6">
+                       <div id="photos" class="row">
+
+                      </div>
+                     </div>
+                   </div>
+                   
+                   
+
 
 <script>
         $(function() {
