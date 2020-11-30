@@ -12,7 +12,8 @@
         $this->customar = $customar;
     }
 ## Go to NewUserCreateListeners
-  ```public function handle($event)
+  ```
+  public function handle($event)
     {
         Mail::to($event->customar['email'])->send(new newusermail());
     }
