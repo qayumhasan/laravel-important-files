@@ -1,2 +1,3 @@
-## Write a Command ```` php artisan make:event NewUserCreateEvent`````
+## Write a Command 
+  ```` php artisan make:event NewUserCreateEvent`````
 ##
