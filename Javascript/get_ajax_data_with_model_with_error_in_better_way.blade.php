@@ -94,6 +94,7 @@
                     data: request,
                     success:function(data){
                         //log(data);
+                        toastr.success(data.successMsg);
                         $('.loading_button').hide();
                         $('.submit_button').show();
                         $('.error').html('');
