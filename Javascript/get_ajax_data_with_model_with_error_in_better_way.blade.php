@@ -100,7 +100,10 @@
                         $('.error').html('');
                         $('#add_income_form')[0].reset();
                         $('#myModal1').modal('hide');
+                         setInterval(function() {
                         window.location = "{{ url()->current() }}";
+                    }, 700);
+                        
                     },
                     error:function(err){
                         $('.loading_button').hide();
