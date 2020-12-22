@@ -13,9 +13,29 @@ public function handle(Request $request, Closure $next, ...$guards)
   
     }
 ```
+## Make A middleware AdminAuthenticate
+   ```
+   protected function authenticate($request, array $guards)
+    {
+      
+	        
+	    if($this->auth->guard('admin')->check()) {
+	        return $this->auth->shouldUse('admin');
+	    }
+      $this->unauthenticated($request, ['admin']);
+    }
+    
+    protected function redirectTo($request)
+    {
+        if (! $request->expectsJson()) {
+            return route('admin.login');
+        }
+    }
+   ```
 ## Register it on kernel.php
 
-
+'admin' => \App\Http\Middleware\AdminAuthenticate::class,
+ 'admin.guest' => \App\Http\Middleware\AdminRedirectIfAuthenticated::class,
 ## In controller write this
 
    // Attempt to log the user in
