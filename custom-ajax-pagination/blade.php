@@ -8,7 +8,7 @@
     </ul>
     @php
         $total_row = count($paginate);
-        $total_page = ceil($total_row / 28)+1;
+        $total_page = ceil($total_row / 28)+1; //here 28 is per page post//
     @endphp
     <div class="img_fotter m-auto">
     <div class="pagination">
