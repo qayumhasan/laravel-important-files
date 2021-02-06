@@ -30,3 +30,6 @@ class Phone extends Model
     }
 }
 ```
+
+## Belongs to take method name as paramiter like as if my mehtod name is user then it take user_id
+## hasOne take model name as paramiter like as if my model name is user it take user_id
