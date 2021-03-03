@@ -11,3 +11,13 @@ echo date('n', strtotime('-1 month')).'<br>';
 echo date('n', strtotime('-2 month')).'<br>';
 echo date('n', strtotime('-3 month')).'<br>';
 ``
+
+## Send Encrypt peramiter
+  ```
+    ## Send With parametar
+      return redirect()->route('admin.checkout.invoice.page', [\Crypt::encrypt($roomID), \Crypt::encrypt($id)])->with($notification);
+    ##Get It on controller
+      $room_id = \Crypt::decrypt($room_id);
+      $checkoutID = \Crypt::decrypt($checkoutID);
+    
+  ```
