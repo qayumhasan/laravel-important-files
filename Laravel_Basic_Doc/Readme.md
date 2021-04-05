@@ -21,3 +21,9 @@ echo date('n', strtotime('-3 month')).'<br>';
       $checkoutID = \Crypt::decrypt($checkoutID);
     
   ```
+  
+  
+## Image Get From Storage
+  ```
+  url('storage/app/public/'.$data->main_image)
+  ```
