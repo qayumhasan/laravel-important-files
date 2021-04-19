@@ -39,6 +39,7 @@
   ```
   php artisan make:seeder UserSeeder
   ```
+ 
 ## Write below code in UserSeeder.php
   ```
     /**
@@ -51,6 +52,13 @@
         Room::factory(50)->create();
     }
   ```
+ ## Now write code in DatabaseSeeder.php like this
+ ```
+  $this->call([
+            EmployeeSeeder::class,
+            RoomSeeder::class,
+        ]);
+ ```
   
 ## Write below code to genarate dummey data
   ```
