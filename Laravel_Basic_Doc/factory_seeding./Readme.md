@@ -1,10 +1,10 @@
-## Create A factory ##
-# Write This command
+# Create A factory ##
+## Write This command
   ```
   php artisan make:factory PostFactory
   ```
-# It Create a postfactory.php file inside database->factory
-# Write code like this
+## It Create a postfactory.php file inside database->factory
+## Write code like this on it
   ```
   /**
      * The name of the factory's corresponding model.
@@ -35,3 +35,20 @@
         ];
     }
   ```
+## Write this command for makeing a seeder
+  ```
+  php artisan make:seeder UserSeeder
+  ```
+## Write below code in UserSeeder.php
+  ```
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Room::factory(50)->create();
+    }
+  ```
+  
