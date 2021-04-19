@@ -52,3 +52,7 @@
     }
   ```
   
+## Write below code to genarate dummey data
+  ```
+    php artisan db:seed
+  ```
