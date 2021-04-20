@@ -27,3 +27,10 @@ echo date('n', strtotime('-3 month')).'<br>';
   ```
   url('storage/app/public/'.$data->main_image)
   ```
+ ## Laravel sesson data
+ ```
+ // store sesson data
+ $request->session()->put('kotdata',$kotdetails);
+ //get sesson data
+  session('kotdata')
+ ```
