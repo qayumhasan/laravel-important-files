@@ -21,7 +21,15 @@ echo date('n', strtotime('-3 month')).'<br>';
       $checkoutID = \Crypt::decrypt($checkoutID);
     
   ```
-  
+## storage in publick
+```
+
+       if($request->hasFile('mainimage')){
+
+            $mainimage = $request->file('mainimage')->store('image','public'); 
+             $product->main_image = $mainimage;
+       }
+```
   
 ## Image Get From Storage
   ```
