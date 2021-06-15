@@ -33,6 +33,43 @@
 
 
 ## In Vue Component
+ data() {
+    return {
+      selected: {
+        cat: this.$route.params.cat,
+        subcat: this.$route.params.subcat,
+        resubcat: [],
+        filter: [],
+        search: "",
+      },
+    };
+  },
+
+  watch: {
+    $route(to, from) {
+      var cat = this.$route.params.cat;
+      var subcat = this.$route.params.subcat;
+      this.$store.dispatch("retriveCategores");
+      this.$store.dispatch("retriveSubCategores",cat);
+      this.$store.dispatch("retriveReSubCategores",{cat:cat,subcat:subcat});
+      this.$store.dispatch("retriveProduct",{cat:cat,subcat:subcat});
+      this.$store.dispatch("retriveFilterProduct",{cat:cat,subcat:subcat,params:this.selected});
+
+      this.selected.resubcat = [];
+      this.selected.filter = [];
+      this.selected.search = "";
+    },
+    selected: {
+      handler: function () {
+        var cat = this.$route.params.cat;
+        var subcat = this.$route.params.subcat;
+        this.$store.dispatch("retriveFilterProduct",{cat:cat,subcat:subcat,params:this.selected});
+      },
+      deep: true,
+    },
+  },
+
+
 
 
 loadFilterProduct() {
