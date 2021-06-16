@@ -17,3 +17,8 @@
         ],
     },
  ```
+ 
+ ## IF we went a item with array (use in vue product fillter) use like this
+ ```
+  $request->input('resubcat', []
+ ```
