@@ -33,3 +33,7 @@
       return this.$route.params.cat;
     }
   ```
+## Set Base Path in axios
+ ```
+  <meta name="api-base-url" content="{{ url('api/') }}" />
+ ```
