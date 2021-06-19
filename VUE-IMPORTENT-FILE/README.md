@@ -37,3 +37,6 @@
  ```
   <meta name="api-base-url" content="{{ url('api/') }}" />
  ```
+// in vue file
+window.axios.defaults.baseURL = document.head.querySelector('meta[name="api-base-url"]').content;
+ 
