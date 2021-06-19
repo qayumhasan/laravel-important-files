@@ -22,3 +22,14 @@
  ```
   $request->input('resubcat', []
  ```
+ 
+ ## Set Active Class
+ ```
+  :class="getCatslug == cat.slug?'active':''"
+ ```
+  // in computed
+  ```
+  getCatslug(){
+      return this.$route.params.cat;
+    }
+  ```
