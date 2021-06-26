@@ -41,4 +41,7 @@
 ```
 window.axios.defaults.baseURL = document.head.querySelector('meta[name="api-base-url"]').content;
 ```
- 
+## Vue Router Go Back
+```
+ this.$router.go(-1);
+```
