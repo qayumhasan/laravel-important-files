@@ -45,3 +45,8 @@ window.axios.defaults.baseURL = document.head.querySelector('meta[name="api-base
 ```
  this.$router.go(-1);
 ```
+
+## set original class with dynamic class in vue js Class
+ ```
+ class="carousel-item" :class="{'active':index == 0}"
+ ```
